@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My GitHub Website</title>
+  <meta charset="UTF-8">
+  <title>Login Demo</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #f0f0f0;
-      margin: 50px;
-    }
-    h1 {
-      color: #333;
-    }
-    p {
-      font-size: 18px;
-    }
+    body { font-family: Arial; text-align: center; margin-top: 100px; }
+    input { margin: 5px; padding: 8px; }
+    button { padding: 8px 16px; }
   </style>
 </head>
 <body>
-  <h1>Selamat Datang di Website Saya!</h1>
-  <p>Website ini dihosting menggunakan GitHub Pages.</p>
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="login()">Login</button>
+
+  <p id="message"></p>
+
+  <script>
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+
+      // Simulasi login: username = admin, password = 123
+      if (user === 'admin' && pass === '123') {
+        document.getElementById('message').textContent = 'Login berhasil!';
+        // Bisa redirect ke halaman lain jika mau
+        // window.location.href = 'beranda.html';
+      } else {
+        document.getElementById('message').textContent = 'Username atau password salah.';
+      }
+    }
+  </script>
 </body>
 </html>
